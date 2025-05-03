@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reward Hub</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #0e0e0e;
+      color: #ccc;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      min-height: 100vh;
+    }
+
+    .country {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      background: linear-gradient(45deg, #ff0000, #000000);
+      padding: 8px 16px;
+      border-radius: 10px;
+      color: #fff;
+      font-weight: bold;
+      font-size: 0.95em;
+      box-shadow: 0 0 10px rgba(255,0,0,0.4);
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    header h1 {
+      font-size: 2.4em;
+      color: #00ffaa;
+    }
+
+    header p {
+      color: #888;
+      font-size: 1em;
+    }
+
+    .offers {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+      width: 100%;
+      max-width: 1000px;
+    }
+
+    .card {
+      background: linear-gradient(135deg, #1c1c1c, #2a2a2a);
+      padding: 20px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+    }
+
+    .card h3 {
+      margin: 10px 0 20px;
+      color: #00ffc8;
+    }
+
+    .btn {
+      background: #ff0055;
+      color: #fff;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #cc0044;
+    }
+
+    .notice {
+      margin-top: 30px;
+      font-size: 0.9em;
+      color: #777;
+      text-align: center;
+      max-width: 600px;
+    }
+  </style>
+</head>
+<body>
+  <div class="country" id="user-country">Detecting country...</div>
+
+  <header>
+    <h1>Welcome to Reward Hub</h1>
+    <p>Select an offer and claim your reward!</p>
+  </header>
+
+  <div class="offers">
+    <div class="card">
+      <h3>$50 PayPal Cash</h3>
+      <a class="btn" href="https://sawutser.top/4/6762718" target="_blank">Claim Now</a>
+    </div>
+    <div class="card">
+      <h3>$100 Google Gift Card</h3>
+      <a class="btn" href="https://sawutser.top/4/7082170" target="_blank">Get Gift Card</a>
+    </div>
+    <div class="card">
+      <h3>Free Fire - 1000 Diamonds</h3>
+      <a class="btn" href="https://sawutser.top/4/6622292" target="_blank">Unlock Diamonds</a>
+    </div>
+    <div class="card">
+      <h3>Earn by Taking Survey</h3>
+      <a class="btn" href="https://sawutser.top/4/7088503" target="_blank">Start Survey</a>
+    </div>
+  </div>
+
+  <div class="notice">
+    *Offers may vary depending on your country and device.
+  </div>
+
+  <script>
+    fetch('https://ipinfo.io/json?token=21169ccfe3b418')
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById('user-country').innerText = 'Country: ' + data.country;
+      })
+      .catch(() => {
+        document.getElementById('user-country').innerText = 'Location not found';
+      });
+  </script>
+</body>
+</html>
